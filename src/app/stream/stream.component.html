@@ -1,0 +1,14 @@
+<div style="width: 100%; height: 100%;">
+  <button mat-raised-button color="primary" (click)="startStream()">Start {{streamIdSum > 0 ? streamIdSum: ''}}</button>
+  <div style="width: 70%; position: relative; margin: 0 auto;">
+    <ul style="position: relative; float: left"><div class="color_timer" [@oneFill]="stream.one.trigger">Stream one</div>
+      <ng-container *ngFor="let s of stream.four"><li *ngIf="s.stream == 1">{{ s.id }}</li></ng-container>
+    </ul>
+    <ul style="position: relative; float: left"><div class="color_timer" [@twoFill]="stream.two.trigger">Stream two</div>
+      <ng-container *ngFor="let s of stream.four"><li *ngIf="s.stream == 2">{{ s.id }}</li></ng-container>
+    </ul>
+    <ul style="position: relative; float: left"><div class="color_timer" [@treeFill]="stream.tree.trigger">Stream tree</div>
+      <ng-container *ngFor="let s of stream.four"><li *ngIf="s.stream == 3">{{ s.id }}</li></ng-container>
+    </ul>
+  </div>
+</div>
